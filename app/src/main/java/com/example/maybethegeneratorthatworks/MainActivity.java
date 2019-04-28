@@ -49,7 +49,6 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    /** Logging Tag. */
     private static final String TAG = "TagGenerator";
 
     /** Constant to perform a read file request. */
@@ -173,7 +172,20 @@ public class MainActivity extends AppCompatActivity {
          */
         new Tasks.ProcessImageTask(MainActivity.this, requestQueue)
                 .execute(currentBitmap);
+
     }
+    /**
+     * Add a photo to the gallery so that we can use it later.
+     *
+     * @param toAdd URI of the file to add
+     */
+    void addPhotoToGallery(final Uri toAdd) {
+        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        mediaScanIntent.setData(toAdd);
+        this.sendBroadcast(mediaScanIntent);
+        Log.d(TAG, "Added photo to gallery: " + toAdd);
+    }
+
 
     /**
      * Process the result from making the API call.
@@ -272,18 +284,6 @@ public class MainActivity extends AppCompatActivity {
         currentBitmap = setCurrentBitmap;
         ImageView photoView = findViewById(R.id.addPhoto);
         photoView.setImageBitmap(currentBitmap);
-    }
-
-    /**
-     * Add a photo to the gallery so that we can use it later.
-     *
-     * @param toAdd URI of the file to add
-     */
-    void addPhotoToGallery(final Uri toAdd) {
-        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        mediaScanIntent.setData(toAdd);
-        this.sendBroadcast(mediaScanIntent);
-        Log.d(TAG, "Added photo to gallery: " + toAdd);
     }
 
     /**
