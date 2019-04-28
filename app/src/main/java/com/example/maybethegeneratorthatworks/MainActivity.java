@@ -49,6 +49,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    /** Logging Tag. */
     private static final String TAG = "TagGenerator";
 
     /** Constant to perform a read file request. */
