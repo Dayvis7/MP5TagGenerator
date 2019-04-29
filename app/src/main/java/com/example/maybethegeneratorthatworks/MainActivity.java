@@ -23,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -82,6 +83,13 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "Open gallery button clicked");
             startOpenFile();
         });
+        final Button processImage = findViewById(R.id.processImage);
+        processImage.setOnClickListener(v -> {
+            Log.d(TAG, "Process Image button clicked");
+            startProcessImage();
+        });
+        final ProgressBar progressBar = findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.INVISIBLE);
 
         /*
          * Here we check for permission to write to external storage and request it if necessary.
