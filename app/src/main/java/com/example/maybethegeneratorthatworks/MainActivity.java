@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         final ImageButton addPhoto = findViewById(R.id.addPhoto);
         addPhoto.setOnClickListener(v -> {
-            Log.d(TAG, "Open file button clicked");
+            Log.d(TAG, "Open gallery button clicked");
             startOpenFile();
         });
 
@@ -207,6 +207,7 @@ public class MainActivity extends AppCompatActivity {
 
     /** Current bitmap we are working with. */
     private Bitmap currentBitmap;
+
 
     /**
      * Process a photo.
