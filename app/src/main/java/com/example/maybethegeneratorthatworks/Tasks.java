@@ -30,7 +30,7 @@ import java.util.Map;
  */
 class Tasks {
     /** Default logging tag for messages from app tasks. */
-    private static final String TAG = "MP3:Tasks";
+    private static final String TAG = "TagGenerator";
 
     /** Default quality level for bitmap compression. */
     private static final int DEFAULT_COMPRESSION_QUALITY_LEVEL = 100;
