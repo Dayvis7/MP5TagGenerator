@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/lightly_textured"
-    android:theme="@style/TextAppearance.AppCompat"
-    >
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -25,9 +25,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/header"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/black"
-            android:textColorHighlight="@android:color/black"
             android:textColorHint="@android:color/black"
             android:textColorLink="@android:color/black"
             android:textSize="36sp"
@@ -66,7 +64,6 @@
         android:background="@drawable/rounded_button"
         android:gravity="center"
         android:text="@string/button"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/txtColor"
         android:textSize="18sp"
         android:textStyle="bold|italic"
@@ -119,7 +116,6 @@
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
                 android:text="@string/scroll"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/txtColor"
                 android:textSize="24sp"
                 app:fontFamily="sans-serif-black" />
