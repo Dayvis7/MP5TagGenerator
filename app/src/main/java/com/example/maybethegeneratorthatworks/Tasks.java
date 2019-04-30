@@ -25,6 +25,10 @@ import java.net.HttpURLConnection;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.clarifai.clarifai_android_sdk.datamodels.Input;
+import com.clarifai.clarifai_android_sdk.datamodels.Model;
+import com.clarifai.clarifai_android_sdk.utils.Error;
+
 /**
  * Background tasks for use by our image recognition app.
  */
@@ -34,6 +38,9 @@ class Tasks {
 
     /** Default quality level for bitmap compression. */
     private static final int DEFAULT_COMPRESSION_QUALITY_LEVEL = 100;
+
+    /**Key to use for image processing. */
+    private static final String CLARIFAI_KEY = "60d6abb2dad74bc2abcf3ea728fc517b";
 
     /**
      * Save a bitmap to external storage for later use.
@@ -150,7 +157,7 @@ class Tasks {
         private static final String MS_CV_API_DEFAULT_DETAILS = "Landmarks,Celebrities";
 
         /** Subscription key. */
-        private static final String SUBSCRIPTION_KEY = BuildConfig.MICROSOFT_KEY;
+        private static final String SUBSCRIPTION_KEY = CLARIFAI_KEY;
 
         /** Reference to the calling activity so that we can return results. */
         private WeakReference<MainActivity> activityReference;
@@ -186,7 +193,7 @@ class Tasks {
         }
 
         /**
-         * Convert an image to a byte array, upload to the Microsoft Cognitive Services API,
+         * Convert an image to a byte array, upload to the Clarifai API,
          * and return a result.
          *
          * @param currentBitmap the bitmap to process

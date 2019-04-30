@@ -48,6 +48,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import com.clarifai.clarifai_android_sdk.datamodels.Input;
+import com.clarifai.clarifai_android_sdk.datamodels.Model;
+import com.clarifai.clarifai_android_sdk.utils.Error;
+
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "TagGenerator";
