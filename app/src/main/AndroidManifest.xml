@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/leather_tag_round"
         android:supportsRtl="true"
-        android:theme="@style/TextAppearance.AppCompat"> <!--hopefully this line doesn't matter-->
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"> <!--hopefully this line doesn't matter-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

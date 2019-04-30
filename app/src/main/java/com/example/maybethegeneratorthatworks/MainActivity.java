@@ -225,7 +225,7 @@ public class MainActivity extends Activity {
         for (JsonElement tag : tags) {
             tagResult.add("#" + tag.getAsString());
         }
-        String toReturn = String.join(", ", tagResult);
+        String toReturn = String.join(" ", tagResult);
         textView.setText(toReturn);
         textView.setVisibility(View.VISIBLE);
     }
