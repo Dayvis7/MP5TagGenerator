@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="txtColor">#C4000000</color>
+    <color name="btColor">#009688</color>
+    <color name="scrollColor">#E9EEEE</color>
+</resources>
