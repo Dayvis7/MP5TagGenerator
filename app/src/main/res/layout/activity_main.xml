@@ -30,7 +30,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="serif"
-        app:fontFamily="@font/aclonica"
+        app:fontFamily="sans-serif"
         app:layout_constraintBottom_toTopOf="@+id/addPhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
