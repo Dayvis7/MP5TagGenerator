@@ -3,4 +3,5 @@
     <color name="txtColor">#C4000000</color>
     <color name="btColor">#009688</color>
     <color name="scrollColor">#E9EEEE</color>
+    <color name="backgroundColor">#E69CE2CE</color>
 </resources>

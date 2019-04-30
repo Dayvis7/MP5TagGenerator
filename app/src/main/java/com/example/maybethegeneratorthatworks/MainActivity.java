@@ -307,9 +307,11 @@ public class MainActivity extends Activity {
      * @param resetInfo whether to reset the image information
      */
     void updateCurrentBitmap(final Bitmap setCurrentBitmap, final boolean resetInfo) {
-        currentBitmap = setCurrentBitmap;
-        ImageView photoView = findViewById(R.id.addPhoto);
-        photoView.setImageBitmap(currentBitmap);
+        if (resetInfo) {
+            currentBitmap = setCurrentBitmap;
+            ImageView photoView = findViewById(R.id.addPhoto);
+            photoView.setImageBitmap(currentBitmap);
+        }
     }
 
     /**

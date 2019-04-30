@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#ff0000"
+    android:background="@color/backgroundColor"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
     <LinearLayout
@@ -23,8 +23,9 @@
             android:layout_height="60dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:gravity="center"
             android:text="@string/header"
-            android:textColor="@android:color/black"
+            android:textColor="@color/txtColor"
             android:textColorHighlight="@android:color/black"
             android:textColorHint="@android:color/black"
             android:textColorLink="@android:color/black"
@@ -52,6 +53,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_gallery" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:progressTint="#4C00FF"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/addPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/addPhoto"
+        tools:visibility="visible" />
+
     <Button
         android:id="@+id/processImage"
         android:layout_width="200dp"
@@ -71,20 +87,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addPhoto" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="370dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="@+id/processImage" />
 
     <ScrollView
         android:id="@+id/scrollView2"
