@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/lightly_textured"
+    android:theme="@style/TextAppearance.AppCompat"
     >
 
     <LinearLayout
@@ -19,24 +20,15 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/btColor"
-        android:gravity="center"
+        android:layout_width="393dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/header"
-        android:textAllCaps="false"
-        android:textColor="@color/txtColor"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="serif"
-        app:fontFamily="sans-serif"
-        app:layout_constraintBottom_toTopOf="@+id/addPhoto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
     <ImageButton
         android:id="@+id/addPhoto"

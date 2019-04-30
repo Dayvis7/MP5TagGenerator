@@ -24,11 +24,11 @@ import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.util.HashMap;
 import java.util.Map;
-
+/*
 import com.clarifai.clarifai_android_sdk.datamodels.Input;
 import com.clarifai.clarifai_android_sdk.datamodels.Model;
 import com.clarifai.clarifai_android_sdk.utils.Error;
-
+*/
 /**
  * Background tasks for use by our image recognition app.
  */
@@ -39,8 +39,9 @@ class Tasks {
     /** Default quality level for bitmap compression. */
     private static final int DEFAULT_COMPRESSION_QUALITY_LEVEL = 100;
 
+    //Used microsoft key for functionality only. Clarifai key is "60d6abb2dad74bc2abcf3ea728fc517b"//
     /**Key to use for image processing. */
-    private static final String CLARIFAI_KEY = "60d6abb2dad74bc2abcf3ea728fc517b";
+    private static final String CLARIFAI_KEY = "24e9edb102bf4e0ab9637b6c79b6d927";
 
     /**
      * Save a bitmap to external storage for later use.

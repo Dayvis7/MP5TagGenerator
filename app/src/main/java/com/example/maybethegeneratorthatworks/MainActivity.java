@@ -1,5 +1,6 @@
 package com.example.maybethegeneratorthatworks;
 
+import java.util.stream.Collectors;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,7 +36,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import org.apache.commons.io.FileUtils;
@@ -45,15 +48,17 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
-
+/*
 import com.clarifai.clarifai_android_sdk.datamodels.Input;
 import com.clarifai.clarifai_android_sdk.datamodels.Model;
 import com.clarifai.clarifai_android_sdk.utils.Error;
+*/
 
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static final String TAG = "TagGenerator";
 
@@ -212,9 +217,16 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.tagView);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonParser jsonParser = new JsonParser();
-        JsonElement jsonElement = jsonParser.parse(jsonResult);
-        String prettyJsonString = gson.toJson(jsonElement);
-        textView.setText(prettyJsonString);
+        JsonObject topLayer  = jsonParser.parse(jsonResult).getAsJsonObject();
+        JsonObject description = topLayer.getAsJsonObject("description");
+        //JsonElement jsonElement = jsonParser.parse(jsonResult);
+        JsonArray tags = description.getAsJsonArray("tags");
+        List<String> tagResult = new ArrayList<>();
+        for (JsonElement tag : tags) {
+            tagResult.add("#" + tag.getAsString());
+        }
+        String toReturn = String.join(", ", tagResult);
+        textView.setText(toReturn);
         textView.setVisibility(View.VISIBLE);
     }
 
