@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/lightly_textured"
+    >
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -13,22 +15,28 @@
         android:gravity="fill"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="246dp">
+        tools:layout_editor_absoluteY="78dp"/>
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="398dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Create your tags here!!"
-            android:textColor="@color/colorAccent"
-            android:textSize="36sp"
-            android:textStyle="italic"
-            android:typeface="normal"
-            app:fontFamily="sans-serif-condensed-medium" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/btColor"
+        android:gravity="center"
+        android:text="@string/header"
+        android:textAllCaps="false"
+        android:textColor="@color/txtColor"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:fontFamily="sans-serif"
+        app:layout_constraintBottom_toTopOf="@+id/addPhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/addPhoto"
@@ -36,10 +44,11 @@
         android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="110dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:adjustViewBounds="true"
+        android:background="@color/scrollColor"
         android:contentDescription="@string/app_name"
         android:cropToPadding="true"
         android:tint="#E91E63"
@@ -50,21 +59,60 @@
 
     <Button
         android:id="@+id/processImage"
-        android:layout_width="128dp"
-        android:layout_height="73dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="#009688"
-        android:text="Generate Tags!"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="center"
+        android:text="@string/button"
+        android:textColor="@color/txtColor"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addPhoto" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        style="@android:style/Widget.DeviceDefault.ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="375dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/scrollColor"
+        android:scrollbarStyle="insideInset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tagView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:text="@string/scroll"
+                android:textColor="@color/txtColor"
+                android:textSize="24sp"
+                app:fontFamily="sans-serif-black" />
+        </LinearLayout>
+    </ScrollView>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -73,44 +121,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="320dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="360dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <FrameLayout
-        android:layout_width="410dp"
-        android:layout_height="628dp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ScrollView
-            android:id="@+id/scrollView2"
-            style="@android:style/Widget.DeviceDefault.ScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="375dp"
-            android:layout_marginBottom="8dp"
-            android:scrollbarStyle="insideInset">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tagView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tags will appear here!"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    app:fontFamily="sans-serif-black" />
-            </LinearLayout>
-        </ScrollView>
-    </FrameLayout>
+        app:layout_constraintStart_toStartOf="@+id/linearLayout" />
 
 </android.support.constraint.ConstraintLayout>
